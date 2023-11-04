@@ -1,0 +1,1119 @@
+{
+	"info": {
+		"_postman_id": "31c72a00-dffa-4924-a9a0-1d9c088321b3",
+		"name": "Electronic Store-Apis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26363947"
+	},
+	"item": [
+		{
+			"name": "USER",
+			"item": [
+				{
+					"name": "Create user",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"abhay sharma\",\r\n    \"email\":\"absharma@gamil.com\",\r\n    \"password\":\"abcd\",\r\n    \"gender\":\"Male\",\r\n    \"about\":\"i am a java developer\",\r\n    \"imageName\":\"ram.png\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FileUpload",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userImage",
+									"type": "file",
+									"src": "/C:/Users/MSI INDIA/Downloads/DushyantPassportSizePic.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9090/users/image/06623327-673c-45b3-87e8-8e6c28f551f6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"users",
+								"image",
+								"06623327-673c-45b3-87e8-8e6c28f551f6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"vikrant sharma\",\r\n    \"email\":\"vikrantjavadev311@gmail.com\",\r\n    \"password\":\"abcd\",\r\n    \"gender\":\"Male\",\r\n    \"about\":\"i am not working \",\r\n    \"imageName\":\"abc.png\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/users/61a7e6dc-fb8b-4a6c-91b0-ef540a927c89",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"users",
+								"61a7e6dc-fb8b-4a6c-91b0-ef540a927c89"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "vikasjavadev311@gmail.com",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "abcd",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/users?pageNumber=0&pageSize=10&sortBy=name&sortDir=desc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "0"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "sortBy",
+									"value": "name"
+								},
+								{
+									"key": "sortDir",
+									"value": "desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/users/3e64e01e-91d8-4ebd-95d4-480cedd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"users",
+								"3e64e01e-91d8-4ebd-95d4-480cedd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single User By Email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/users/email/vikasjavadev311@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"users",
+								"email",
+								"vikasjavadev311@gmail.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/users/search/sharma",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"users",
+								"search",
+								"sharma"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/users/06623327-673c-45b3-87e8-8e6c28f551f6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"users",
+								"06623327-673c-45b3-87e8-8e6c28f551f6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login api",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"vikasjavadev311@gmail.com\",\r\n    \"password\":\"abcd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Earphones\",\r\n    \"description\":\"this cateogory contains best and cheap Earphones\",\r\n    \"coverImage\":\"Trending.png\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Top 5 products\",\r\n    \"description\":\"this cateogory contains best and cheap Earphones\",\r\n    \"coverImage\":\"top5.png\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/categories/385bcc2b-6675-4091-98ee-721e7b806797",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"categories",
+								"385bcc2b-6675-4091-98ee-721e7b806797"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get single",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/categories/385bcc2b-6675-4091-98ee-721e7b806797",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"categories",
+								"385bcc2b-6675-4091-98ee-721e7b806797"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get All product in a Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/categories/385bcc2b-6675-4091-98ee-721e7b806797",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"categories",
+								"385bcc2b-6675-4091-98ee-721e7b806797"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/categories/385bcc2b-6675-4091-98ee-721e7b806797",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"categories",
+								"385bcc2b-6675-4091-98ee-721e7b806797"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "coverimageUpload",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "coverimage",
+									"type": "file",
+									"src": "/C:/Users/MSI INDIA/Downloads/tv.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9090/categories/coverimage/c09a521b-479c-4950-b18f-a46a11b0b4ec",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"categories",
+								"coverimage",
+								"c09a521b-479c-4950-b18f-a46a11b0b4ec"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ServeCoverImage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/categories/coverimage/385bcc2b-6675-4091-98ee-721e7b806797",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"categories",
+								"coverimage",
+								"385bcc2b-6675-4091-98ee-721e7b806797"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n            \r\n            \"title\": \"Iphone 13 max pro\",\r\n            \"description\": \"This is very good Iphone launched in 2021\",\r\n            \"price\": 80000,\r\n            \"discountedPrice\": 83000,\r\n            \"quantity\": 50,\r\n            \"live\": true,\r\n            \"stock\": true,\r\n            \"productImageName\": \"01fdeb58-7ffa-49ed-8e5f-e657c32eb83a.jpg\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create with Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n            \r\n            \"title\": \"Samsung m31s\",\r\n            \"description\": \"This is good phone in range wth very good camera\",\r\n            \"price\": 15000,\r\n            \"discountedPrice\": 12000,\r\n            \"quantity\": 100,\r\n            \"live\": true,\r\n            \"stock\": true\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/categories/60d3d599-126a-4fb3-b1e8-ef32415db5d9/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"categories",
+								"60d3d599-126a-4fb3-b1e8-ef32415db5d9",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Samsung S22 Ultra\",\r\n    \"description\":\"This phone is having very good camera with zoom 100X\",\r\n    \"price\":120000,\r\n    \"discountedPrice\":100000,\r\n    \"quantity\":20,\r\n    \"live\":true,\r\n    \"stock\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/products/c6e94ae4-fbc2-4830-98f6-5a6818bed875",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"products",
+								"c6e94ae4-fbc2-4830-98f6-5a6818bed875"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"productId\": \"7797870d-cba1-4645-8ebd-3950baf1a199\",\r\n            \"title\": \"Samsung M52 Ultra\",\r\n            \"description\": \"This phone is having very good camera with zoom 100X\",\r\n            \"price\": 26000,\r\n            \"discountedPrice\": 19000,\r\n            \"quantity\": 25,\r\n            \"addedDate\": \"2023-08-22T11:47:35.514+00:00\",\r\n            \"live\": false,\r\n            \"stock\": true,\r\n            \"productImageName\": null\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/products/c6e94ae4-fbc2-4830-98f6-5a6818bed875",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"products",
+								"c6e94ae4-fbc2-4830-98f6-5a6818bed875"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Category",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Samsung S22 Ultra\",\r\n    \"description\":\"This phone is having very good camera with zoom 100X\",\r\n    \"price\":120000,\r\n    \"discountedPrice\":100000,\r\n    \"quantity\":20,\r\n    \"live\":true,\r\n    \"stock\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/categories/60d3d599-126a-4fb3-b1e8-ef32415db5d9/products/c3b31e3b-c49c-487c-866e-d1d9b3e57585",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"categories",
+								"60d3d599-126a-4fb3-b1e8-ef32415db5d9",
+								"products",
+								"c3b31e3b-c49c-487c-866e-d1d9b3e57585"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get single",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Samsung S22 Ultra\",\r\n    \"description\":\"This phone is having very good camera with zoom 100X\",\r\n    \"price\":120000,\r\n    \"discountedPrice\":100000,\r\n    \"quantity\":20,\r\n    \"live\":true,\r\n    \"stock\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/products/cadba2ca-c74f-4c2d-b998-375e1ff65b27",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"products",
+								"cadba2ca-c74f-4c2d-b998-375e1ff65b27"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Products of a category",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Samsung S22 Ultra\",\r\n    \"description\":\"This phone is having very good camera with zoom 100X\",\r\n    \"price\":120000,\r\n    \"discountedPrice\":100000,\r\n    \"quantity\":20,\r\n    \"live\":true,\r\n    \"stock\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/categories/60d3d599-126a-4fb3-b1e8-ef32415db5d9/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"categories",
+								"60d3d599-126a-4fb3-b1e8-ef32415db5d9",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload product Image",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "productimage",
+									"type": "file",
+									"src": "/C:/Users/MSI INDIA/Pictures/Screenshots/Screenshot (319).png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:9090/products/image/91b039ec-c5f9-4745-afca-0765bf88d253",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"products",
+								"image",
+								"91b039ec-c5f9-4745-afca-0765bf88d253"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Serve  product Image",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/products/image/9a28cfa9-663f-469c-80cb-69a4a336ea95",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"products",
+								"image",
+								"9a28cfa9-663f-469c-80cb-69a4a336ea95"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Samsung S22 Ultra\",\r\n    \"description\":\"This phone is having very good camera with zoom 100X\",\r\n    \"price\":120000,\r\n    \"discountedPrice\":100000,\r\n    \"quantity\":20,\r\n    \"live\":true,\r\n    \"stock\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/products/search/Iphone",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"products",
+								"search",
+								"Iphone"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Samsung S22 Ultra\",\r\n    \"description\":\"This phone is having very good camera with zoom 100X\",\r\n    \"price\":120000,\r\n    \"discountedPrice\":100000,\r\n    \"quantity\":20,\r\n    \"live\":true,\r\n    \"stock\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/products?sortDir=desc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "sortDir",
+									"value": "desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all live",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Samsung S22 Ultra\",\r\n    \"description\":\"This phone is having very good camera with zoom 100X\",\r\n    \"price\":120000,\r\n    \"discountedPrice\":100000,\r\n    \"quantity\":20,\r\n    \"live\":true,\r\n    \"stock\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/products/live",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"products",
+								"live"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "Add item to cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\":\"c3b31e3b-c49c-487c-866e-d1d9b3e57585\",\r\n    \"quantity\":5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/carts/008cccef-c3ed-4954-a846-f361a80fbcfc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"carts",
+								"008cccef-c3ed-4954-a846-f361a80fbcfc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove item from  cart",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/carts/008cccef-c3ed-4954-a846-f361a80fbcfc/items/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"carts",
+								"008cccef-c3ed-4954-a846-f361a80fbcfc",
+								"items",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get CART",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/carts/23097c9b-fdf4-4bde-a0db-1ffc0179d83b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"carts",
+								"23097c9b-fdf4-4bde-a0db-1ffc0179d83b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get CART Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/carts/23097c9b-fdf4-4bde-a0db-1ffc0179d83b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"carts",
+								"23097c9b-fdf4-4bde-a0db-1ffc0179d83b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Clear cart",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/carts/71b9daf6-054a-4122-bf6f-758b7df30cf8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"carts",
+								"71b9daf6-054a-4122-bf6f-758b7df30cf8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "create order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cartId\":\"30226d2f-9ae5-4ff2-99ce-b8d5a52020d3\",\r\n    \"userId\":\"008cccef-c3ed-4954-a846-f361a80fbcfc\",\r\n    \"billingAddress\":\"Noida sector 44 \",\r\n    \"billingPhone\":\"7016565576\",\r\n    \"billingName\":\"vikas sharma\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOrdersOfUser",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cartId\":\"30226d2f-9ae5-4ff2-99ce-b8d5a52020d3\",\r\n    \"userId\":\"008cccef-c3ed-4954-a846-f361a80fbcfc\",\r\n    \"billingAddress\":\"Noida sector 44 \",\r\n    \"billingPhone\":\"7016565576\",\r\n    \"billingName\":\"vikas sharma\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/orders/users/23097c9b-fdf4-4bde-a0db-1ffc0179d83",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"orders",
+								"users",
+								"23097c9b-fdf4-4bde-a0db-1ffc0179d83"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOrders",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cartId\":\"30226d2f-9ae5-4ff2-99ce-b8d5a52020d3\",\r\n    \"userId\":\"008cccef-c3ed-4954-a846-f361a80fbcfc\",\r\n    \"billingAddress\":\"Noida sector 44 \",\r\n    \"billingPhone\":\"7016565576\",\r\n    \"billingName\":\"vikas sharma\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/orders?pageNumber=0&pageSize=10&sortDir=desc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"orders"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "0"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "sortDir",
+									"value": "desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeOrder",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2aWthc2phdmFkZXYzMTFAZ21haWwuY29tIiwiaWF0IjoxNjk4NjEzODY0LCJleHAiOjE2OTg2MzE4NjR9.9RoHTAbvuLhSk0ZZbGlJvJNrMeGjgHLpTUnLVp4-Ye_GtHXho5Wy9_uhupasAvsM5F0gZirzl7_vcgFkMJvDQg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/orders/008cccef-c3ed-4954-a846-f361a80fbcfc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"orders",
+								"008cccef-c3ed-4954-a846-f361a80fbcfc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
